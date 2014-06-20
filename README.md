@@ -1,6 +1,7 @@
-# Dynamic Web Applications
-## Section Worksheets
-## http://dwa15.com
+# Section Worksheets
+Dynamic Web Applications
+
+<http://dwa15.com>
 
 Worksheets should be written using Markdown.
 
