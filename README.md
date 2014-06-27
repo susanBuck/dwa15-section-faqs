@@ -1,10 +1,8 @@
 # Section Worksheets
-Dynamic Web Applications
-
-<http://dwa15.com>
+[Dynamic Web Applications](http://dwa15.com)
 
 Worksheets should be written using Markdown.
 
-Naming convention: `w#-w3.md` and `w#-c#-solutions.md`
+Naming convention: `w#.md` and `w#-solutions.md`  (`w` being short for *week*).
 
-Example: `w1-c2.md` and `w1-c2-solutions.md`
+Example: `w1.md` and `w1-solutions.md`
