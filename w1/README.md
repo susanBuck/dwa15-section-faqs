@@ -1,5 +1,7 @@
 ## Domains / Subdomains 
 
+**July 3 Update: Right now these instructions are specific to Pagoda; we'll update with details relevant to the new live server provider, once we decide what that server is. **
+
 Register a domain name via a service like [Namecheap](http://namecheap.com). This should cost you about $10, give or take, depending on the TLD (Top Level Domain) extension you use. For example, a `.me` domain can often be cheaper than a `.com` domain.
 
 If you already have a domain, you can use that too.
