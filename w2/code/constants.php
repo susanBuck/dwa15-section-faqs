@@ -1,6 +1,6 @@
 <?php
 	// define our constants with a ternary checking for the $_POST['no_of_students']
-	define(NO_OF_STUDENTS,((!empty($_POST['no_of_students'])) ? $_POST['no_of_students'] : 30));
+	define(NO_OF_STUDENTS,((!empty($_POST['no_of_students'])) ? $_POST['no_of_students'] : 90));
 	// the max grade out of which the grade is calculated
 	define(GRADE_SCALE,100);
 	// the minimum grade that we should use for our abstract students with random grades

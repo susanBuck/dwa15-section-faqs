@@ -50,8 +50,8 @@
 		}
 	}
 
-	function getAverageStyle() {
-		return ($_SESSION["class_average"] >= PASS_THRESHOLD) ? 'blue' : 'red';
+	function getAverageStyle($average) {
+		return ($average >= PASS_THRESHOLD) ? 'blue' : 'red';
 	}
 
 	function show_student_count() {
