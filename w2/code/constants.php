@@ -1,18 +1,13 @@
 <?php
-	// define our constants.
-	// override number of students if supplied by user
-	if($_POST["no_of_students"]) {
-		define(NO_OF_STUDENTS,$_POST["no_of_students"]);		
-	} else {
-		define(NO_OF_STUDENTS,20);
-	}
+	// define our constants with a ternary checking for the $_POST['no_of_students']
+	define(NO_OF_STUDENTS,((!empty($_POST['no_of_students'])) ? $_POST['no_of_students'] : 30));
 	// the max grade out of which the grade is calculated
 	define(GRADE_SCALE,100);
 	// the minimum grade that we should use for our abstract students with random grades
 	// this value is arbitrary
 	define(MIN_GRADE,45);
 	// the path of the csv file
-	define(CSV_LOCATION, "grades.csv");
+	define(CSV_LOCATION, 'grades.csv');
 	// by creating these names we make our code more readable
 	define(RANDOM,0);
 	define(CSV,1);

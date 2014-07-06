@@ -32,4 +32,29 @@
 		$average = number_format(array_sum($grades)/count($grades),2);
 		return $average;
 	}
+
+	// putting this here to separate it out from the template file
+	function returnAverage() {
+		$grades = array();
+		// switch depending on method type
+		if (METHOD == CSV) {
+			// get average from csv file grades
+			$average = getCSVGradesAverage(CSV_LOCATION);
+			$_SESSION["class_average"] = $average;
+			return $average;	
+		} elseif (METHOD == RANDOM) {
+			// get average from random grades generator
+				$average = getRandomGradesAverage($grades,NO_OF_STUDENTS,MIN_GRADE,GRADE_SCALE);
+				$_SESSION["class_average"] = $average;
+				return $average;
+		}
+	}
+
+	function getAverageStyle() {
+		return ($_SESSION["class_average"] >= PASS_THRESHOLD) ? 'blue' : 'red';
+	}
+
+	function show_student_count() {
+		return NO_OF_STUDENTS;
+	}
 ?>
