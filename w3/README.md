@@ -43,7 +43,7 @@ As mentioned in lecture, it is good practice to create Master templates with def
 
 You insert a section into a master template by adding:
 
-    @yeild(’sectionname’)
+    @yield(’sectionname’)
 
 That section can then be defined in another View with:
 
@@ -59,7 +59,7 @@ That section can then be defined in another View with:
 
 * Create a new Route that goes to /blade
 * Pass an associative array of data values to a custom template
-* Create a master template that will @yeild a section of data.
+* Create a master template that will @yield a section of data.
 * Try each of the structures above
 	- Loop through the array of values
 	- Output a single item in the array, making sure to check if that item is set
