@@ -1,1 +1,1 @@
-Any extra files needed for the worksheets can be put here.
+Any extra files/assets for sections can be stored here.
