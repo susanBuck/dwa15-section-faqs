@@ -1,2 +1,3 @@
 # Section FAQ Outlines
-[Dynamic Web Applications](http://dwa15.com)
+
+* [September 9, 2014: Week 1 - Command Line](Week1.md)
