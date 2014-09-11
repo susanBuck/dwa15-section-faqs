@@ -44,11 +44,13 @@ At any time the ‘clear’ command will clear out the terminal space and give y
 
 You can use ‘man commandName’ at any time to find out information about a specific command
 
+```bash
 $ pwd - present working directory
-
 $ ls - list directory contents
+```
 
 e.g.,
+
 "ls -a -l -h” path  (-a shows hidden files, -l makes a list of the files, -h shows a readable file size)
 
 The flags above -a -l -h can be concatenated into -alh, in any order.
@@ -61,19 +63,24 @@ cd - change directory
 
 the / character denotes the base directory and also separates directory names
 the ~ character represents your user’s root directory
-
+```bash
 $ cd .. (goes back one directory)
 $ cd /path/to/directory (goes to new  directory)
-
+```
+```bash
 $ mkdir directoryname - make a new directory
-
+```
+```bash
 $ touch filename.txt - create a new empty file named filename.txt
-
+```
+```bash
 $ rm filename.txt - remove a file
 $ rm -rf directoryname - remove a directory and all of its contents, -r for recursive and -f for force
-
+```
+```bash
 $ mv filename /newpath/ - moves a file to a new path
 $ mv filename filenametwo - renames a file (this is more powerful and more consistent than rename)
+```
 - when renaming a file you can also change the directory of that file
 
 ###Editors:
@@ -98,46 +105,48 @@ When you view ‘cd / ; ls -al’ you will see that the file ownership column wi
 The chown command will allow you to change the ownership of files ‘chown filename.txt’. If you are trying to specify ‘root’ as the new file owner, or changing a file from root to your current user, you will need to preface your command with ‘sudo’.
 
 sudo - super user do will bypass permissions checks after you input your computer’s password:
-
+```bash
 $ sudo chown root filename.txt 
+```
 sudo is often needed when changing global configuration files outside of your current user’s directory path
 
 cp - copy a file to a new filename
-
+```bash
 $ cp currentFile.txt newFileCopy.txt
-
+```
 ###Grep and Piping:
 
 Grep is a tool used for searching for strings in a text file. It is commonly used in conjunction with the | and > commands, which allow you to reroute data from one tool to another.
 
 Look for files made in august:
-
+```bash
 ls -la | grep ‘Aug’
-
+```
 Look for jpg files by extension:
-
+```bash
 ls -la | grep -i ‘.jpg’
-
+```
 Look for line in a file:
-
+```bash
 Grep ‘[search term]’ [filename1] [filename2] …
-
+```
 Look for line in all files in a folder (using recursion)
-
+```bash
 grep -R ‘[searchterm]’ [path such as ./ for current dir]
-
+```
 Write output to a file:
-
+```bash
 ls -la > fileList.txt
-
+```
+View the result
+```bash
 cat fileList.txt
-
+```
 Search file with grep, save result in file
-
+```bash
 grep ‘invalid username’ logfile.log > usernameErrors.log
-
+```
 or use >> to append
 
-cat usernameErrors.log to show output
 
 ## References
