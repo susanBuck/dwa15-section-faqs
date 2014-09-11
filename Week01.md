@@ -111,21 +111,33 @@ $ cp currentFile.txt newFileCopy.txt
 Grep is a tool used for searching for strings in a text file. It is commonly used in conjunction with the | and > commands, which allow you to reroute data from one tool to another.
 
 Look for files made in august:
+
 ls -la | grep ‘Aug’
+
 Look for jpg files by extension:
+
 ls -la | grep -i ‘.jpg’
+
 Look for line in a file:
+
 Grep ‘[search term]’ [filename1] [filename2] …
+
 Look for line in all files in a folder (using recursion)
+
 grep -R ‘[searchterm]’ [path such as ./ for current dir]
 
 Write output to a file:
+
 ls -la > fileList.txt
+
 cat fileList.txt
 
 Search file with grep, save result in file
+
 grep ‘invalid username’ logfile.log > usernameErrors.log
+
 or use >> to append
+
 cat usernameErrors.log to show output
 
 ## References
