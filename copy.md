@@ -50,7 +50,7 @@ The asterisk marks the branch you are currently working in.
 Use checkout to move to the new branch. If you make changes and commit from this branch, your master branch will still be pointing at the previous snapshot of your code, the one you were on before you used git checkout.
 
 ```bash
-$ git checkout (insert your branch name here, without parenthesis)
+$ git checkout new-branch
 ```
 
 You can also create a new branch and switch to it in one command with:
@@ -107,7 +107,6 @@ Check that the conflict is gone with git status.
 $ git status
 ```
 
-
 ###Stashing:
 
 If your work is in a state where you don’t want to commit (too messy, a bug, etc) but you need to work on another branch, you can save your current work using stash.
@@ -133,3 +132,4 @@ To remove a sash, use git stash drop.
 ```bash
 $ git stash drop (name of stash, no parenthesis)
 ```
+
