@@ -24,9 +24,9 @@ This Section:
 ###Branching:
 
 Goal: 
-Learn how to split off from the default branch (usually master)
-Learn how to make changes on another branch
-Be able to checkout between branches 
+- Learn how to split off from the default branch (usually master)
+- Learn how to make changes on another branch
+- Be able to checkout between branches 
 
 One way to achieve the results of branching would be to create a copy of your code, put it into a second directory, edit that, and merge it later. Git makes this much easier.
 
@@ -37,12 +37,20 @@ $ git branch
 ```
 
 Use checkout to move to a new branch. If you make changes and commit from this branch, your master branch will still be pointing at the previous snapshot of your code, the one you were on before you used git checkout.
-(show checkout, make change in text editor, show commit)
-(show git checkout -b <name of branch> for automatic creation and switch)
 
-Checkout back to the master branch.
-(Show that the files have reverted to their older state)
-(show an attempt to checkout without committing changes, explain the failure, explain that you can use stashing and comment amending to get around this)
+```bash
+$ git checkout (insert your branch name here, without parenthesis)
+```
+
+```bash
+$ git checkout -b (name of branch) - for automatic creation and switch
+```
+
+After edits are made and commited, checkout back to the master branch.
+
+```bash
+$ git checkout master
+```
 
 ###Commands:
 
