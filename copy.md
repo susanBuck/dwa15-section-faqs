@@ -4,46 +4,22 @@
 * [Link to recording (when done)]()
 
 ## Summary
-Why do we use Github?
+You have already:
 
-- Working on remote servers is unavoidable.
-- Using command line tools will speed you up considerably and give you access to otherwise hidden folder information.
+- Setup Git
+- Setup Github
+- Setup a Repository
+- git add
+- git push
+- git commit
 
-OS X and other UNIX/Linux systems are inherently multi-user systems.
+This Section:
 
-When you open terminal you are auto-logged into unix as your current user. Terminal is an interface for bash, and is able to interact with the UNIX kernel (core of the operating system).
-
-The anatomy of a command-line tool:
-
-hostname:directory username$  command + options [arguments] + arguments
-
-1) command (name of the program) 
-
-2) options (in the form of flags - modify the behavior of the command in some way)
-    - note: options can have their own arguments
-    - banner -w 50 DWA15
-
-3) arguments - the things that you are operating on, whether it be a file, text or address
-example: 
-
-1. Branching
-Starting with Branching makes for a smoother transition into talking about merge conflicts and stashing, the ordering of merge conflicts and stashing is less important.
-
-Overall goal: show how to divert from the default branch (usually master) and do work on the side that is separate but can eventually be committed to the main branch.
-
-Explain: One way to do this would be to create a copy of your code, put it into a second directory, edit that, and merge it later. Git makes this much easier.
-
-git branch doesn’t move you to a new branch: it only creates a new branch.
-(Show branch creation)
-
-Use checkout to move to a new branch. If you make changes and commit from this branch, your master branch will still be pointing at the previous snapshot of your code, the one you were on before you used git checkout.
-(show checkout, make change in text editor, show commit)
-(show git checkout -b <name of branch> for automatic creation and switch)
-
-Checkout back to the master branch.
-(Show that the files have reverted to their older state)
-(show an attempt to checkout without committing changes, explain the failure, explain that you can use stashing and comment amending to get around this)
-
+- Branching
+- Checkout
+- Merging
+- Merge Conflicts
+- Stashing
 
 
 ## Outline
