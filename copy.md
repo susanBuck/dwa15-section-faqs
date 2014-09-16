@@ -115,7 +115,7 @@ $ git status
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-If you open the file where the conflict occurred, you will see that Git has notated the conflicting sections. The first section shows the line(s) as they appear on the branch you are merging *into* ('HEAD'), and the section section (after the '=======') shows the lines as they appear on the branch you are merging *from*.
+If you open the file where the conflict occurred ('hello.html' in this case), you will see that Git has notated the conflicting sections. The first section shows the line(s) as they appear on the branch you are merging *into* ('HEAD'), and the section section (after the '=======') shows the lines as they appear on the branch you are merging *from*.
 
 ```html
 <<<<<<< HEAD
