@@ -9,7 +9,7 @@ You have already:
 - Set up Git
 - Set up Github
 - Set up a Repository
-- git add, git push, git commit
+- Learned to use `git add, git push`, and `git commit`
 
 This Section:
 
