@@ -21,7 +21,7 @@ In this section we will cover:
 
 These techniques will probably not be necessary for your class projects, but they demonstrate more of the power of Git, and will become useful as you work on larger projects and with collaborators.
 
-##TEST EDITING
+##TEST EDITING!
 
 ## Outline
 ###Branching:
@@ -61,32 +61,32 @@ You can also create a new branch and switch to it in one command with:
 $ git checkout -b new-branch
 ```
 
->>>ADD EXAMPLES OF MAKING CHANGES IN BRANCH, COMMITING, THEN RETURNING TO MASTER AND LOOK, NO CHANGES!
-
 After edits are made and commited, checkout back to the master branch.
 
 ```bash
 $ git checkout master
 ```
 
+Once you've returned to the master branch, check out the file you changed in your new branch in a text editor. Your edits aren't there! But if you switch back to your new branch, the edits will reappear. 
+
 ###Merging and Merge Conflicts:
 
-We can merge a branch we’re working on with the master branch.
+Once you're happy with all the edits you've made in your branch, you'll probably want to merge them in to your master branch. When merging, make sure you are in the branch you want to merge *to*. So from your master branch, run:
 
 ```bash
-$ git merge (name of branch to merge)
+$ git merge new-branch
 ```
 
-We can pull changes from the master branch to a branch that we are working on
+Alternately, if you wanted to pull changes from the master branch to your new branch, you would check out your new branch, then run:
 
 ```bash
 $ git merge master
 ```
 
-You can delete an old branch.
+Once you've merged your changes into the master branch, and no longer need the development branch, delete it using:
 
 ```bash
-$ git branch -d (branch name)
+$ git branch -d new-branch
 ```
 
 If you have changed the same part of a file in the two branches you intend to merge together, there will be a merge conflict. 
