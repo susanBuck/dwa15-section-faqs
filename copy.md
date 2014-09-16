@@ -134,7 +134,7 @@ To resolve the merge conflict, first deal with the conflicting lines within the 
 Then add and commit the offending file:
 
 ```bash
-$ git add --all
+$ git add hello.html
 
 $ git commit -m "resolving Hello World conflict"
 ```
@@ -142,7 +142,16 @@ $ git commit -m "resolving Hello World conflict"
 Check that the conflict is gone with git status.
 ```bash
 $ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 20 commits.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
 ```
+
+###Pulling and Fetching:
+
+NOTES IN PROGRESS
 
 ###Stashing:
 
