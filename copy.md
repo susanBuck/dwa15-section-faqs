@@ -9,9 +9,7 @@ You have already:
 - Setup Git
 - Setup Github
 - Setup a Repository
-- git add
-- git push
-- git commit
+- git add, git push, git commit
 
 This Section:
 
@@ -23,16 +21,28 @@ This Section:
 
 
 ## Outline
-###Shortcuts:
+###Branching:
 
-- Up arrow/down arrow to show previous commands that have been used. Great for speeding up repetitive tasks.
+Goal: 
+Learn how to split off from the default branch (usually master)
+Learn how to make changes on another branch
+Be able to checkout between branches 
 
-- When you are typing a file or directory name, press the tab button to complete the filename if it already exists. If there are two similarly named files, pressing tab tab will show you the different options you have.
+One way to achieve the results of branching would be to create a copy of your code, put it into a second directory, edit that, and merge it later. Git makes this much easier.
 
-- Control+a will move your cursor to the beginning of the line
-- Control+e will move your cursor to the end of the line
-- Option+click will sometimes let you jump to a specific point in terminal on a Mac
-- Control+z will almost always exit from the current operation or program you are in
+git branch doesn’t move you to a new branch: it only creates a new branch.
+
+```bash
+$ git branch
+```
+
+Use checkout to move to a new branch. If you make changes and commit from this branch, your master branch will still be pointing at the previous snapshot of your code, the one you were on before you used git checkout.
+(show checkout, make change in text editor, show commit)
+(show git checkout -b <name of branch> for automatic creation and switch)
+
+Checkout back to the master branch.
+(Show that the files have reverted to their older state)
+(show an attempt to checkout without committing changes, explain the failure, explain that you can use stashing and comment amending to get around this)
 
 ###Commands:
 
