@@ -21,7 +21,7 @@ In this section we will cover:
 
 These techniques will probably not be necessary for your class projects, but they demonstrate more of the power of Git, and will become useful as you work on larger projects and with collaborators.
 
-##TEST EDIT
+##TEST EDITING
 
 ## Outline
 ###Branching:
