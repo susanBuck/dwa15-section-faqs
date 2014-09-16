@@ -6,9 +6,9 @@
 ## Summary
 You have already:
 
-- Setup Git
-- Setup Github
-- Setup a Repository
+- Set up Git
+- Set up Github
+- Set up a Repository
 - git add, git push, git commit
 
 This Section:
