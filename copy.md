@@ -26,6 +26,26 @@ hostname:directory username$  command + options [arguments] + arguments
 3) arguments - the things that you are operating on, whether it be a file, text or address
 example: 
 
+1. Branching
+Starting with Branching makes for a smoother transition into talking about merge conflicts and stashing, the ordering of merge conflicts and stashing is less important.
+
+Overall goal: show how to divert from the default branch (usually master) and do work on the side that is separate but can eventually be committed to the main branch.
+
+Explain: One way to do this would be to create a copy of your code, put it into a second directory, edit that, and merge it later. Git makes this much easier.
+
+git branch doesn’t move you to a new branch: it only creates a new branch.
+(Show branch creation)
+
+Use checkout to move to a new branch. If you make changes and commit from this branch, your master branch will still be pointing at the previous snapshot of your code, the one you were on before you used git checkout.
+(show checkout, make change in text editor, show commit)
+(show git checkout -b <name of branch> for automatic creation and switch)
+
+Checkout back to the master branch.
+(Show that the files have reverted to their older state)
+(show an attempt to checkout without committing changes, explain the failure, explain that you can use stashing and comment amending to get around this)
+
+
+
 ## Outline
 ###Shortcuts:
 
