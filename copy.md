@@ -100,24 +100,24 @@ Running `git status` will give you more information:
 
 ```bash
 $ git status
-\# On branch master
-\# Your branch is ahead of 'origin/master' by 19 commits.
-\#   (use "git push" to publish your local commits)
-\#
-\# You have unmerged paths.
-\#   (fix conflicts and run "git commit")
-\#
-\# Unmerged paths:
-\#   (use "git add <file>..." to mark resolution)
-\#
-\#       both modified:      hello.html
-\#
+# On branch master
+# Your branch is ahead of 'origin/master' by 19 commits.
+#   (use "git push" to publish your local commits)
+#
+# You have unmerged paths.
+#   (fix conflicts and run "git commit")
+#
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+#       both modified:      hello.html
+#
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 If you open the file where the conflict occurred, you will see that Git has notated the conflicting sections. The first section shows the line(s) as they appear on the branch you are merging *into* ('HEAD'), and the section section (after the '=======') shows the lines as they appear on the branch you are merging *from*.
 
-```
+```html
 <<<<<<< HEAD
 <p>Hello world!</p>
 =======
@@ -127,7 +127,7 @@ If you open the file where the conflict occurred, you will see that Git has nota
 
 To resolve the merge conflict, first deal with the conflicting lines within the file:
 
-```
+```html
 <p>HELLO WORLD!</p>
 ```
 
@@ -164,9 +164,9 @@ When you come back and want to reapply your stash, you can look using git stash 
 $ git stash apply
 ```
 
-To remove a sash, use git stash drop.
+To remove a stash, use git stash drop.
 
 ```bash
-$ git stash drop (name of stash, no parenthesis)
+$ git stash drop <name of stash, no parenthesis>
 ```
 
