@@ -1,10 +1,10 @@
-# September 10, 2014: Week 1 - Command Line
+# September 17, 2014: Week 2 - Git 
 
 * [Link to live stream (when live)]()
 * [Link to recording (when done)]()
 
 ## Summary
-Why use the command line?
+Why do we use Github?
 
 - Working on remote servers is unavoidable.
 - Using command line tools will speed you up considerably and give you access to otherwise hidden folder information.
