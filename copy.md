@@ -11,14 +11,15 @@ You have already:
 - Set up a Repository
 - Learned to use `git add, git push`, and `git commit`
 
-This Section:
+In this section we will cover:
 
 - Branching
 - Checkout
-- Merging
-- Merge Conflicts
+- Merging (your own branches, and changes made by teammates)
+- Merge conflicts
 - Stashing
 
+These techniques will probably not be necessary for your class projects, but they demonstrate more of the power of Git, and will become useful as you work on larger projects and with collaborators.
 
 ## Outline
 ###Branching:
@@ -26,26 +27,39 @@ This Section:
 Goals: 
 - Learn how to split off from the default branch (usually master)
 - Learn how to make changes on another branch
-- Be able to checkout between branches 
+- Be able to switch between ('checkout') branches 
 
-One way to achieve the results of branching would be to create a copy of your code, put it into a second directory, edit that, and merge it later. Git makes this much easier.
+One way to achieve the results of branching would be to create a copy of your code, put it into a second directory, edit that, manually incorporate the changes later, then delete that second directory. Git makes this much easier.
 
-git branch doesn’t move you to a new branch: it only creates a new branch.
+To create a new branch:
+
+```bash
+$ git branch new-branch
+```
+
+This command doesn’t move you to a new branch: it only creates a new branch. Use the same command with no branch name to list your branches:
 
 ```bash
 $ git branch
+* master
+  new-branch
 ```
 
-Use checkout to move to a new branch. If you make changes and commit from this branch, your master branch will still be pointing at the previous snapshot of your code, the one you were on before you used git checkout.
+The asterisk marks the branch you are currently working in.
+
+Use checkout to move to the new branch. If you make changes and commit from this branch, your master branch will still be pointing at the previous snapshot of your code, the one you were on before you used git checkout.
 
 ```bash
 $ git checkout (insert your branch name here, without parenthesis)
 ```
-or use
+
+You can also create a new branch and switch to it in one command with:
 
 ```bash
-$ git checkout -b (name of branch) - for automatic creation and switch
+$ git checkout -b new-branch
 ```
+
+>>>ADD EXAMPLES OF MAKING CHANGES IN BRANCH, COMMITING, THEN RETURNING TO MASTER AND LOOK, NO CHANGES!
 
 After edits are made and commited, checkout back to the master branch.
 
