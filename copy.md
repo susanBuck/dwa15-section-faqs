@@ -23,7 +23,7 @@ This Section:
 ## Outline
 ###Branching:
 
-Goal: 
+Goals: 
 - Learn how to split off from the default branch (usually master)
 - Learn how to make changes on another branch
 - Be able to checkout between branches 
@@ -41,6 +41,7 @@ Use checkout to move to a new branch. If you make changes and commit from this b
 ```bash
 $ git checkout (insert your branch name here, without parenthesis)
 ```
+or use
 
 ```bash
 $ git checkout -b (name of branch) - for automatic creation and switch
@@ -52,50 +53,45 @@ After edits are made and commited, checkout back to the master branch.
 $ git checkout master
 ```
 
-###Commands:
+###Merging and Merge Conflicts:
 
-At any time the ‘clear’ command will clear out the terminal space and give you a clean prompt.
-
-You can use ‘man commandName’ at any time to find out information about a specific command
+We can merge a branch we’re working on with the master branch.
 
 ```bash
-$ pwd - present working directory
-$ ls - list directory contents
+$ git merge (name of branch to merge)
 ```
 
-e.g.,
+We can pull changes from the master branch to a branch that we are working on
 
-"ls -a -l -h” path  (-a shows hidden files, -l makes a list of the files, -h shows a readable file size)
-
-The flags above -a -l -h can be concatenated into -alh, in any order.
-
-cd - change directory
-
-- the . and .. within each directory hold references to the current directory and the previous directory. You can use these anywhere a path is used.
-
-- files that start with a . are hidden configuration files
-
-the / character denotes the base directory and also separates directory names
-the ~ character represents your user’s root directory
 ```bash
-$ cd .. (goes back one directory)
-$ cd /path/to/directory (goes to new  directory)
+$ git merge master
 ```
+
+You can delete an old branch.
+
 ```bash
-$ mkdir directoryname - make a new directory
+$ git branch -d (branch name)
 ```
+
+If you have changed the same part of a file in the two branches you intend to merge together, there will be a merge conflict. 
+
+Git will pause when you hit a merge conflict. If you want to see where the conflict is, use git status.
+
 ```bash
-$ touch filename.txt - create a new empty file named filename.txt
+$ git status
 ```
+
+Git will notate the file where the error occurred. 
+To resolve this conflict, one strategy is to use git's merge tool. It will run through the conflicts for you.
+
 ```bash
-$ rm filename.txt - remove a file
-$ rm -rf directoryname - remove a directory and all of its contents, -r for recursive and -f for force
+$ git mergetool
 ```
+
+Check that the conflict is gone with git status.
 ```bash
-$ mv filename /newpath/ - moves a file to a new path
-$ mv filename filenametwo - renames a file (this is more powerful and more consistent than rename)
+$ git status
 ```
-- when renaming a file you can also change the directory of that file
 
 ###Editors:
 
