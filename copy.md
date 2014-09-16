@@ -93,36 +93,33 @@ Check that the conflict is gone with git status.
 $ git status
 ```
 
-###Editors:
 
-vi -> vim
-pico -> nano
-emacs
+###Stashing:
 
-use an editor by ‘pico filename.txt’ or ‘vim filename.txt’
+If your work is in a state where you don’t want to commit (too messy, a bug, etc) but you need to work on another branch, you can save your current work using stash.
 
-Viewing file contents:
-
-cat - good for showing short files
-less - good for showing longer files, allows you to page through and starts at the beginning
-head - shows just the few top lines of a file
-tail - shows the ending lines of a file (good for log files, can be specified to show live updates to the file)
-
-###Permissions:
-
-When you view ‘cd / ; ls -al’ you will see that the file ownership column will display ‘root’ which is the admin user within the system. If you go to your user’s root directory with ‘cd ~; ls -al’ you will see your current username as the owner of files, with an exception for the .. reference to the previous folder. 
-
-The chown command will allow you to change the ownership of files ‘chown filename.txt’. If you are trying to specify ‘root’ as the new file owner, or changing a file from root to your current user, you will need to preface your command with ‘sudo’.
-
-sudo - super user do will bypass permissions checks after you input your computer’s password:
 ```bash
-$ sudo chown root filename.txt 
+$ git stash
 ```
-sudo is often needed when changing global configuration files outside of your current user’s directory path
 
-cp - copy a file to a new filename
+You can show current stashes using the git stash list command.
+
 ```bash
-$ cp currentFile.txt newFileCopy.txt
+$ git stash list
+```
+
+When you come back and want to reapply your stash, you can look using git stash list and apply using git stash apply. Git assumes that you mean the most recent stash, unless you specify a different stash by name.
+
+```bash
+$ git stash apply
+```
+
+To remove a sash, use git stash drop.
+
+```bash
+$ git stash drop (name of stash, no parenthesis)
+```
+
 ```
 ###Grep and Piping:
 
