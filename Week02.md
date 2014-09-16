@@ -1,6 +1,5 @@
 # September 17, 2014: Week 2 - Git 
 
-* [Link to live stream (when live)]()
 * [Link to recording (when done)]()
 
 ## Summary
