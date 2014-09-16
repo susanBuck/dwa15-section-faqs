@@ -21,8 +21,6 @@ In this section we will cover:
 
 These techniques will probably not be necessary for your class projects, but they demonstrate more of the power of Git, and will become useful as you work on larger projects and with collaborators.
 
-
-
 ## Outline
 ###Branching:
 
@@ -89,19 +87,56 @@ Once you've merged your changes into the master branch, and no longer need the d
 $ git branch -d new-branch
 ```
 
-If you have changed the same part of a file in the two branches you intend to merge together, there will be a merge conflict. 
+If you have changed the same part of a file in the two branches you intend to merge together, there will be a merge conflict, which Git will report to you:
 
-Git will pause when you hit a merge conflict. If you want to see where the conflict is, use git status.
+```bash
+$ git merge new-branch
+Auto-merging hello.html
+CONFLICT (content): Merge conflict in hello.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Running `git status` will give you more information:
 
 ```bash
 $ git status
+\# On branch master
+\# Your branch is ahead of 'origin/master' by 19 commits.
+\#   (use "git push" to publish your local commits)
+\#
+\# You have unmerged paths.
+\#   (fix conflicts and run "git commit")
+\#
+\# Unmerged paths:
+\#   (use "git add <file>..." to mark resolution)
+\#
+\#       both modified:      hello.html
+\#
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Git will notate the file where the error occurred. 
-To resolve this conflict, one strategy is to use git's merge tool. It will run through the conflicts for you.
+If you open the file where the conflict occurred, you will see that Git has notated the conflicting sections. The first section shows the line(s) as they appear on the branch you are merging *into* ('HEAD'), and the section section (after the '=======') shows the lines as they appear on the branch you are merging *from*.
+
+```
+<<<<<<< HEAD
+<p>Hello world!</p>
+=======
+<p>HELLO WORLD</p>
+>>>>>>> new branch
+```
+
+To resolve the merge conflict, first deal with the conflicting lines within the file:
+
+```
+<p>HELLO WORLD!</p>
+```
+
+Then add and commit the offending file:
 
 ```bash
-$ git mergetool
+$ git add --all
+
+$ git commit -m "resolving Hello World conflict"
 ```
 
 Check that the conflict is gone with git status.
