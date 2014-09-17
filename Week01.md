@@ -1,8 +1,5 @@
 # September 10, 2014: Week 1 - Command Line
 
-* [Link to live stream (when live)]()
-* [Link to recording (when done)]()
-
 ## Summary
 Why use the command line?
 

@@ -1,7 +1,5 @@
 # September 17, 2014: Week 2 - Git 
 
-* [Link to recording (when done)]()
-
 ## Summary
 You have already:
 
