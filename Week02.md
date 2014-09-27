@@ -152,7 +152,17 @@ So far we've shown the process of creating a local branch and then merging it in
 
 If you try to push a commit to Github and the remote repository contains commits that you have not yet merged with your local repo, Git will display an error message:
 
-
+```bash
+λ git push origin master
+To git@github.com:teamAwesome/our-project.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:teamAwesome/our-project.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: 'git pull') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
 
 ###Stashing:
 
