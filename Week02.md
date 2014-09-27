@@ -153,7 +153,7 @@ So far we've shown the process of creating a local branch and then merging it in
 If you try to push a commit to Github and the remote repository contains commits that you have not yet merged with your local repo, Git will display an error message:
 
 ```bash
-λ git push origin master
+$ git push origin master
 To git@github.com:teamAwesome/our-project.git
  ! [rejected]        master -> master (fetch first)
 error: failed to push some refs to 'git@github.com:teamAwesome/our-project.git'
@@ -163,6 +163,63 @@ hint: to the same ref. You may want to first merge the remote changes (e.g.,
 hint: 'git pull') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
+
+There are two ways to retrieve those changes from the remote repository -- `pull` and `fetch`. The first will do two things with one command 1) get the changes from the remote repository, and 2) attempt to merge them into your local repository.
+
+```bash
+$ git pull origin
+remote: Counting objects: 16, done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 16 (delta 3), reused 11 (delta 1)
+Unpacking objects: 100% (16/16), done.
+From github.com:teamAwesome/our-project.git
+   4507f48..839e848  master     -> origin/master
+Auto-merging hello.html
+Merge made by the 'recursive' strategy.
+ hello.html | 3 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ ```
+
+ If that merge fails, you'll get a merge error message just as we saw above when merging our own local branches, and will need to resolve it in the same way.
+
+ The second option, `fetch` allows you to retrieve remote changes and merge them with your local repo in two separate steps, giving you more control.
+
+```bash
+λ git fetch origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 1 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From github.com:teamAwesome/our-project.git
+   0c24738..1a08bb6  master     -> origin/master
+```
+
+After running `fetch` you now have a special branch called `origin/master` which represents the state of the remote repository. You can then run a diff against your own local repository to see what the differences between the two versions are:
+
+```bash
+λ git diff master origin/master
+diff --git a/hello.html b/hello.html
+index ac77018..3addf7a 100644
+--- a/hello.html
++++ b/hello.html
+@@ -1,4 +1,4 @@
+-<h1>Hello World!!!</h1>
++<h1>Hellooooooooo World!!!</h1>
+
+<p>Welcome to our awesome project.</p>
+```
+
+If you see differences that are likely to cause merge conflicts, you can address them by editing your local code before merging in the remote changes.
+
+When you are ready to merge the `origin/master` branch in, the syntax is the same as we already saw for a local branch:
+
+```bash
+$ git merge origin/master
+Merge made by the 'recursive' strategy.
+ hello.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
 
 ###Stashing:
 
