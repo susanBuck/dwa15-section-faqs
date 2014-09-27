@@ -1,4 +1,4 @@
-# September 10, 2014: Week 1 -- Command Line
+# September 10, 2014: Week 1 - Command Line
 
 ## Summary
 Why use the command line?
