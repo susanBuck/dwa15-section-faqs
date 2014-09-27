@@ -1,7 +1,5 @@
 # September 17, 2014: Week 2 - Git 
 
-* [Link to recording (when done)]()
-
 ## Summary
 You have already:
 
@@ -150,7 +148,11 @@ nothing to commit, working directory clean
 
 ###Pulling and Fetching:
 
-NOTES IN PROGRESS
+So far we've shown the process of creating a local branch and then merging it into your local master branch. When collaborating with teammates, you will also often need to retrieve their changes from a shared remote repository and merge those changes into your local repository.
+
+If you try to push a commit to Github and the remote repository contains commits that you have not yet merged with your local repo, Git will display an error message:
+
+
 
 ###Stashing:
 
