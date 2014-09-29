@@ -148,9 +148,9 @@ nothing to commit, working directory clean
 
 ###Pulling and Fetching:
 
-So far we've shown the process of creating a local branch and then merging it into your local master branch. When collaborating with teammates, you will also often need to retrieve their changes from a shared remote repository and merge those changes into your local repository.
+So far we've shown the process of creating a local branch and then merging it into your master branch. When collaborating with teammates, you will also often need to retrieve their changes from a shared remote repository and merge those changes with your local repository.
 
-If you try to push a commit to Github and the remote repository contains commits that you have not yet merged with your local repo, Git will display an error message:
+If you try to push a commit to Github and the remote repository contains commits that you do not yet have in your local repo, Git will display an error message:
 
 ```bash
 $ git push origin master
@@ -164,7 +164,7 @@ hint: 'git pull') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-There are two ways to retrieve those changes from the remote repository -- `pull` and `fetch`. The first will do two things with one command 1) get the changes from the remote repository, and 2) attempt to merge them into your local repository.
+There are two commands that will retrieve those changes from the remote repository: `pull` and `fetch`. The first will perform two actions with one command: 1) get the changes from the remote repository, and 2) attempt to merge them into your local repository.
 
 ```bash
 $ git pull origin
@@ -182,7 +182,7 @@ Merge made by the 'recursive' strategy.
 
  If that merge fails, you'll get a merge error message just as we saw above when merging our own local branches, and will need to resolve it in the same way.
 
- The second option, `fetch` allows you to retrieve remote changes and merge them with your local repo in two separate steps, giving you more control.
+ The second option, `fetch`, allows you to retrieve remote changes and merge them with your local repo in two separate steps, giving you more control.
 
 ```bash
 λ git fetch origin
@@ -223,27 +223,69 @@ Merge made by the 'recursive' strategy.
 
 ###Stashing:
 
-If your work is in a state where you don’t want to commit (too messy, a bug, etc) but you need to work on another branch, you can save your current work using stash.
+If your work is in a state where you don’t want to commit (too messy, a bug, etc) but you need to work on another branch, you can save your current work using stash. Imagine you are in the middle of developing a new feature in a local branch, but suddenly you learn about an urgent bug on your live site. You need to hop over to your master branch to fix it and deploy the fix, but you aren't at a place in developing your new feature where you're ready for a commit. If you try to use checkout to switch branches while you have uncommitted changes in your current branch, one of two things will happen (depending on whether the state of the branch you are switching to will conflict with the edits in your current branch).
+
+Either you will get an error message saying you cannot switch branches:
 
 ```bash
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        hello.html
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+```
+Or git will let you switch, but your uncommitted changes will come with you:
+
+```bash
+$ git checkout master
+M       hello.html
+Switched to branch 'master'
+```
+
+In this second case, if you look at the file you edited, you'll see the changes you made in your development branch even though you're now on the master branch. That means you can't deploy your bug fix without also pushing your half-finished new feature live.
+
+To solve this problem, you can use `git stash`. This command will save your uncommitted changes for you, and return your current branch to the state of its last commit. From your development branch:
+
+
+```bash
+$ git status
+# On branch new-branch
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   hello.html
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
 $ git stash
+Saved working directory and index state WIP on new-branch: 1542edb added new section header
+HEAD is now at 1542edb added new section header
+
+$ git status
+# On branch comments
+nothing to commit, working directory clean
+
+$ git checkout master
+Switched to branch 'master'
+
 ```
 
-You can show current stashes using the git stash list command.
+With your working directory (current branch) clean, you can now switch to your master branch for your bug fix. When you're done and ready to continue work on your new feature, you can return to your development branch and use `git stash apply` to get your uncommitted edits back.
 
 ```bash
-$ git stash list
-```
+$ git checkout new-branch
+Switched to branch 'new-branch'
 
-When you come back and want to reapply your stash, you can look using git stash list and apply using git stash apply. Git assumes that you mean the most recent stash, unless you specify a different stash by name.
-
-```bash
 $ git stash apply
+# On branch new-branch
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   hello.html
+#
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-To remove a stash, use git stash drop.
-
-```bash
-$ git stash drop <name of stash, no parenthesis>
-```
-
+NOTE: `stash` will only work for files git has already started tracking. If you add a brand new file on your development branch and run `git stash`, that file won't be stashed, and will remain in your branch. If you switch branches, it will come with you (and get committed if you use `git add --all` to stage after switching). If you've added new files, make sure to run `git add [filename]` to start tracking it before using `git stash`.
