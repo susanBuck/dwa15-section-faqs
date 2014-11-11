@@ -28,11 +28,18 @@ Modes, represented by checkboxes in Regexpal, provide general instructions to th
 be processed. Modes are generally triggered by a letter following the regular expression's closing forward slash.
 
 - **Global** - `/regex/g` - in global mode, a regex engine will return *all* matches. In non-global mode, it will return only the earliest (leftmost) match. Regexpal is always global, but most other regex engines are non-global by default.
-- *Case insensitive* - `/regex/i` - regex engines are case sensitive by default (this is generally more useful).
-- *Multiline* - `/regex/m` - see "Anchors and Word Boundaries" below.
-- *Dot matches all* - `/regex/s` - determines whether or not the dot metacharacter will match with line break characters (by default it will not)
+- **Case insensitive** - `/regex/i` - regex engines are case sensitive by default (this is generally more useful).
+- **Multiline** - `/regex/m` - see "Anchors and Word Boundaries" below.
+- **Dot matches all** - `/regex/s` - determines whether or not the dot metacharacter will match with line break characters (by default it will not)
 
-## Literal Characters
+## Literal Characters, Metacharacters, and Escapes
+Regular expressions, most broadly, use two kinds of characters -- literal characters and metacharacters. Literal characters represent that character itself, while metacharacters represent a wildcard (can be more than one character) or provide instructions to the engine on what kind of pattern to look for. The backslash character `\` is an escape -- it can be used in front of a metacharacter to turn it into a literal character, or in some cases in front of a literal character to give it special meaning as a metacharacter.
+
+Feature | Syntax | Example 
+--- | --- | ---
+Literal characters | a | /a/ matches "a" in "abc"
+
+
 
 ## Metacharacters
 
