@@ -10,18 +10,27 @@ The material covered here draws heavily from the Lynda.com course [Using Regular
 
 For example, in Project 2, one option for getting a list of words to be used by the password generator was to scrape [a website that listed common words](http://www.paulnoll.com/Books/Clear-English/words-01-02-hundred.html). In the html for that website, the words themselves are found between `<li>` tags. One way to retrieve just the words themselves from between the tags is to write a regular expression that says "find me everything between an opening `<li>` and a closing `</li>`". At the end of this section we'll write a regular expression that does that.
 
+Regular expressions are generally denoted by being wrapped in forward slashes -- `/regex/` -- though some languages and engines may not require this (Regexpal does not).
+
 Regular expressions are used in several contexts:
 
 - On the command line, using the grep utility
 - In programming languages including PHP and JavaScript
 - In text editors (useful for find/replace)
 
-Regular expressions are generally denoted by being wrapped in forward slashes -- `/regex/` -- though some languages and engines may not require this (Regexpal does not).
+Note: There are different "flavors" of regular expressions -- some languages and engines do not support all regex features.
 
 ## Regexpal
 [Regexpal](http://regexpal.com) is a JavaScript-based regular expression engine that allows you to quickly test regular expressions on sample text. (Note: there are a few regex features that are not supported by JavaScript, and therefore cannot be tested in Regexpal. If you write an regex that you think should work that Regexpal is not processing as you expect, you may be using an unsupported feature.)
 
 ## Modes & Defaults
+Modes, represented by checkboxes in Regexpal, provide general instructions to the engine for how a regex should
+be processed. Modes are generally triggered by a letter following the regular expression's closing forward slash.
+
+- *Global* - `/regex/g` - in global mode, a regex engine will return *all* matches. In non-global mode, it will return only the earliest (leftmost) match. Regexpal is always global, but most other regex engines are non-global by default.
+- *Case insensitive* - `/regex/i` - regex engines are case sensitive by default. Case sensitive regular expressions are much more common.
+- *Multiline* - `/regex/m` - see "Anchors and Word Boundaries" below.
+- *Dot matches all* - `/regex/s` - determines whether or not the dot metacharacter will match with line break characters (by default it will not)
 
 ## Literal Characters
 
@@ -61,6 +70,8 @@ Regular expressions are generally denoted by being wrapped in forward slashes --
 - negative lookahead
 - positive lookbehind
 - negative lookbehind
+
+## Using Regular Expressions on the command line
 
 ## Using Regular Expressions in PHP
 - mode flags
