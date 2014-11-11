@@ -37,7 +37,7 @@ Regular expressions, most broadly, use two kinds of characters -- literal charac
 
 Feature | Syntax | Example 
 --- | :---: | ---
-Literal characters | `a` | `/a/` matches "a" in "abc" /n /bc/ matches "bc" in "abc"
+Literal characters | `a` | `/a/` matches "a" in "abc" <br> `/bc/` matches "bc" in "abc"
 
 
 
