@@ -36,8 +36,8 @@ be processed. Modes are generally triggered by a letter following the regular ex
 Regular expressions, most broadly, use two kinds of characters -- literal characters and metacharacters. Literal characters represent that character itself, while metacharacters represent a wildcard (can be more than one character) or provide instructions to the engine on what kind of pattern to look for. The backslash character `\` is an escape -- it can be used in front of a metacharacter to turn it into a literal character, or in some cases in front of a literal character to give it special meaning as a metacharacter.
 
 Feature | Syntax | Example 
---- | --- | ---
-Literal characters | a | /a/ matches "a" in "abc"
+--- | :---: | ---
+Literal characters | `a` | `/a/` matches "a" in "abc" /n /bc/ matches "bc" in "abc"
 
 
 
