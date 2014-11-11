@@ -27,8 +27,8 @@ Note: There are different "flavors" of regular expressions -- some languages and
 Modes, represented by checkboxes in Regexpal, provide general instructions to the engine for how a regex should
 be processed. Modes are generally triggered by a letter following the regular expression's closing forward slash.
 
-- *Global* - `/regex/g` - in global mode, a regex engine will return *all* matches. In non-global mode, it will return only the earliest (leftmost) match. Regexpal is always global, but most other regex engines are non-global by default.
-- *Case insensitive* - `/regex/i` - regex engines are case sensitive by default. Case sensitive regular expressions are much more common.
+- **Global** - `/regex/g` - in global mode, a regex engine will return *all* matches. In non-global mode, it will return only the earliest (leftmost) match. Regexpal is always global, but most other regex engines are non-global by default.
+- *Case insensitive* - `/regex/i` - regex engines are case sensitive by default (this is generally more useful).
 - *Multiline* - `/regex/m` - see "Anchors and Word Boundaries" below.
 - *Dot matches all* - `/regex/s` - determines whether or not the dot metacharacter will match with line break characters (by default it will not)
 
