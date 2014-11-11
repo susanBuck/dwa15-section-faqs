@@ -66,14 +66,14 @@ Character ranges, denoted by a hyphen, `-`, between starting and ending characte
 
 Note that the hyphen is only a metacharacter when it's inside a set. Outside of square brackets, a hyphen is a literal character.
 
-- [a-z] matches any lowercase letter
-- [A-Z] matches any uppercase letter
-- [a-zA-Z] matches any uppercase or lowercase letter
-- [0-9] matches any digit
+- `[a-z]` matches any lowercase letter
+- `[A-Z]` matches any uppercase letter
+- `[a-zA-Z]` matches any uppercase or lowercase letter
+- `[0-9]` matches any digit
 
 Feature | Syntax | Example 
 --- | :---: | ---
-Character ranges | `/[a-z]/` | `[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]` matches a zip+4 area code like "02140-1234"
+Character ranges | `/[a-z]/` | `[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]` <br> matches a zip+4 area code like "02140-1234"
 
 ### Negative Character Sets
 The carat symbol, `^`, negates a character set, telling the engine to match any one character *except* characters found in the set.
@@ -115,15 +115,15 @@ Meaning | Syntax | Example
 --- | :---: | ---
 Repeat x to y times | `{x,y}` | `/[0-9]{2,4}/` matches numbers with 2 to 4 digits
 Repeat exactly x times | `{x}` | `/[0-9]{4}/` matches numbers with exactly 4 digits <br> `/[0-9]{5}-[0-9]{4}/` matches a zip+4
-Repeat x or more times | `/{x,} <br> (note comma) | `/[0-9]{4,}/` matches numbers with 4 or more digits
+Repeat x or more times | `/{x,}` <br> (note comma) | `/[0-9]{4,}/` matches numbers with 4 or more digits
 
 ## Lazy vs. Greedy Expressions
-By default, repetition quantifiers are **greedy**, meaning the regex engine will try to give you back the longest possible string that matches your pattern. The `?` character when used after a repetition quantifier makes it *lazy* instead, meaning that it will return a match as soon as if finds one, even if there are following characters that would still be allowed in the match.
+By default, repetition quantifiers are **greedy**, meaning the regex engine will try to give you back the longest possible string that matches your pattern. The `?` character when used after a repetition quantifier makes it **lazy** instead, meaning that it will return a match as soon as if finds one, even if there are following characters that would still be allowed in the match.
 
 Behavior | Syntax | Example
 --- | :---: | ---
 Greedy -- returns the longest possible string that matches | `*` `+` `?` `{min,max}` | `/[0-9]{2,4}/` will match "1234" in "12345"
-Lazy -- returns a match as soon as it can | `*` `+` `?` `{min,max}` | `/[0-9]{2,4}?/` will match "12" and "34" in "12345"
+Lazy -- returns a match as soon as it can | `*?` `+?` `??` `{min,max}?` | `/[0-9]{2,4}?/` will match "12" and "34" in "12345"
 
 ## Grouping
 Parentheses group characters and sets together so that repetition quantifiers can work on more than one character. They can also be used on single characters to improve readability, and to capture matches for use in backreferences (more on this below).
@@ -133,7 +133,7 @@ Meaning | Syntax | Example
 Group characters together | `(abc)` | `/(123)+/` matches "123" and "123123123" <br> `/(re)?late/` matches "relate" and "late"
 
 ## Alternation
-The alternation metacharacter, `|`, provides a two or more possible options for a match. Repetition and alternation can also be nested.
+The alternation metacharacter, `|`, provides two or more possible options for a match. Repetition and alternation can also be nested.
 
 Meaning | Syntax | Example
 --- | :---: | ---
@@ -151,7 +151,8 @@ Anchor metacharacters allow you to search for matches that occur at the beginnin
 
 Regex engines use single line mode by default. In multiline mode, `^` and `$` can refer to the start and end of a line, as well as to the start and end of the entire string. (Note multiline mode is not supported in many Unix tools.)
 
-In the list:
+In the following list:
+
 milk<br>eggs<br>butter<br>cream cheese
 
 `/^\w+$/` will match the first three items, *but only in multiline mode*.
